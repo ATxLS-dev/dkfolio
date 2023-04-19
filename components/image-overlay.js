@@ -1,194 +1,58 @@
-const imageOverlay = document.createElement('template');
 
-imageOverlay.innerHTML = /*html*/`
-    <style>
-    #overlay div{
-        display: grid;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        grid-template-columns: 1fr 8fr 1fr;
-        grid-template-rows: auto;
-        place-items: center;
-        z-index: 1;
-        background-color: rgba(0, 0, 0, 0.8);
-        left: 0;
-        top: 0;
-        animation-duration: 0.5s;
-        animation-name: fadeInFromNone;
-        animation-fill-mode: forwards;
-        -webkit-animation-duration: 0.5s;
-        -webkit-animation-name: fadeInFromNone;
-        -webkit-animation-fill-mode: forwards;
-        -ms-animation-duration: 0.5s;
-        -ms-animation-name: fadeInFromNoneIE;
-        -ms-animation-fill-mode: forwards;
-    }
-    
-    #overlay img {
-        height: auto;
-        maxHeight: 100%;
-        maxWidth: 100%;
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-    }
-
-    @-webkit-keyframes fadeInFromNone {
-        0% {
-            opacity: 0
-        }
-
-        1% {
-            opacity: 0
-        }
-
-        100% {
-            opacity: 1
+$(document).ready(function () {
+    window.onclick = e => {
+        const image = $(e.target);
+        const tag = image.prop('nodeName');
+        const imgClass = image.prop('className');
+        const imgID = image.attr('id');
+        if (tag == 'IMG'
+            && imgClass != 'overlay'
+            && imgID != 'overlay-image') {
+            createImageOverlay(image.attr('src'));
+            $('.overlay').fadeOut(0);
+            $('.overlay').fadeIn(400);
+        } else {
+            $('.overlay').fadeOut(400, () => {
+                $('.overlay').remove();
+            });
         }
     }
+});
 
-    @keyframes fadeInFromNoneIE {
-        0% {
-            opacity: 0
-        }
+function createImageOverlay(imgSrc) {
 
-        1% {
-            opacity: 0
-        }
-
-        100% {
-            opacity: 1
-        }
-    }
-
-    @keyframes fadeInFromNone {
-        0% {
-            opacity: 0
-        }
-
-        1% {
-            opacity: 0
-        }
-
-        100% {
-            opacity: 1
-        }
-    }
-    </style>
-    <div id="overlay" onclick="hideImageOverlay()"></div>
-    
-`
-
-class ImageOverlay extends HTMLDivElement {
-    constructor() {
-        super();
-    }
-
-    connectedCallback() {
-        const shadowRoot = this.attachShadow({ mode: 'closed' });
-        shadowRoot.appendChild(imageOverlay.content);
-    }
-}
-
-customElements.define('image-overlay', Div);
-
-
-function showImageOverlay(img_id) {
-    imageOverlay(img_id);
-    document.getElementById("overlay").style.display = "grid";
-}
-
-function hideImageOverlay() {
-    document.getElementById("overlay").style.display = "none";
-}
-
-function imageOverlay(img_id) {
-
-    const imageOverlay = document.createElement("div");
-    imageOverlay.innerHTML = `
+    const imageOverlay = document.createElement('div');
+    imageOverlay.className = 'overlay';
+    imageOverlay.innerHTML = /*html*/ `
         <style>
-        #overlay div{
-            display: grid;
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            grid-template-columns: 1fr 8fr 1fr;
-            grid-template-rows: auto;
-            place-items: center;
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.8);
-            left: 0;
-            top: 0;
-            animation-duration: 0.5s;
-            animation-name: fadeInFromNone;
-            animation-fill-mode: forwards;
-            -webkit-animation-duration: 0.5s;
-            -webkit-animation-name: fadeInFromNone;
-            -webkit-animation-fill-mode: forwards;
-            -ms-animation-duration: 0.5s;
-            -ms-animation-name: fadeInFromNoneIE;
-            -ms-animation-fill-mode: forwards;
-        }
-          
-        #overlay img {
-            height: auto;
-            maxHeight: 100%;
-            maxWidth: 100%;
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-        }
-
-        @-webkit-keyframes fadeInFromNone {
-            0% {
-                opacity: 0
+            .overlay {
+                opacity: 1;
+                display: grid;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                grid-template-columns: 1fr 8fr 1fr;
+                grid-template-rows: auto;
+                place-items: center;
+                z-index: 1;
+                background-color: rgba(0, 0, 0, 0.8);
+                left: 0;
+                top: 0;
             }
-
-            1% {
-                opacity: 0
+            .overlay img {
+                height: auto;
+                max-height: 100%;
+                max-width: 100%;
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
             }
-
-            100% {
-                opacity: 1
-            }
-        }
-
-        @keyframes fadeInFromNoneIE {
-            0% {
-                opacity: 0
-            }
-
-            1% {
-                opacity: 0
-            }
-
-            100% {
-                opacity: 1
-            }
-        }
-
-        @keyframes fadeInFromNone {
-            0% {
-                opacity: 0
-            }
-
-            1% {
-                opacity: 0
-            }
-
-            100% {
-                opacity: 1
-            }
-        }
         </style>
-
     `
 
-    const image = document.createElement("img");
-    image.src = img_id;
-    image.alt = "Image not found";
+    const image = document.createElement('img');
+    image.id = 'overlay-image'
+    image.src = imgSrc;
 
     imageOverlay.appendChild(image);
-    document.getElementById("overlay").appendChild(imageOverlay);
+    document.getElementsByTagName('main')[0].prepend(imageOverlay);
 }
-
-

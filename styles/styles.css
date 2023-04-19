@@ -1,0 +1,56 @@
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: #94AE8957 rgba(255, 255, 255, 0);
+  --bar-color: rgba(223, 213, 205, 0.4);
+  --background-color: #ffffff;
+  --title-size: 3em;
+  --border-radius: 0.6em;
+  --button-background: #ffffff;
+  --border-default: 1px solid #d1d1d1;
+  --border-color: #d1d1d1;
+  --box-shadow-inset: inset 2px 2px 4px 0 rgb(0, 0, 0, 0.2);
+  --box-shadow: 2px 2px 4px 0 rgb(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+main {
+  margin-top: 5em;
+  background-color: ffffff;
+}
+
+body {
+  font-family: "Comfortaa", serif;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+body::-webkit-scrollbar {
+  width: 0.25em;
+}
+body::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+body::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+
+p {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.greybar {
+  height: 6em;
+  background-color: var(--bar-color);
+  min-width: 100%;
+}
+
+.greybar p {
+  margin-top: 5.5em;
+}

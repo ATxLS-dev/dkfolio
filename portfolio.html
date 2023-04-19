@@ -8,25 +8,24 @@
     <meta name="description" content="Danielle Kormylo Photography" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/portfolio-layout.css" />
     <script src="components/nav-element.js" type="text/javascript" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+    <script defer src="components/image-overlay.js"></script>
 </head>
 
-<body class="scrolling">
+<body>
     <nav-component></nav-component>
     <main>
-
-        <script src="components/image-overlay.js"></script>
-        <div class="fullwidthimage">
-            <img src="assets/pano.jpg">
+        <div id="devils-slide"><img src="assets/devils_slide.jpg" alt="devil's slide"></div>
+        <div id="seal-pile"><img src="assets/seal_pile.jpg" alt="seal pile"></div>
+        <div id="film">
+            <h1 class="title">film</h1>
         </div>
-        <div class="centertext">
-            <p>PORTFOLIO PICTURES</p>
-        </div>
-        <div class="greybar">
-            <p>film photographer san francisco</p>
+        <div class="greybar"></div>
+        <div id="digital">
+            <h1 class="title">digital</h1>
         </div>
     </main>
 </body>

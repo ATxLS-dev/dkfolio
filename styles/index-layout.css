@@ -1,0 +1,46 @@
+.homegrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+}
+
+.homegrid #fullwidthimage {
+  grid-column: 1 / -1;
+  grid-row: 1/2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.homegrid .quote {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.homegrid .bodytext {
+  padding: 0em 4em 0em 4em;
+  grid-column: 1 / -1;
+  grid-row: 4/5;
+}
+
+.homegrid .bodytext p {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  text-transform: uppercase;
+  font-size: small;
+  margin-top: 2em;
+}
+
+.homegrid .greybar {
+  grid-column: 1 / -1;
+  grid-row: 3/4;
+}
+
+.homegrid .link {
+  margin-top: 2em;
+  grid-column: 2 / 3;
+  grid-row: 5/6;
+  text-decoration: underline;
+}

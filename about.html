@@ -1,94 +1,26 @@
-<!DOCTYPE html lang="en">
+<!DOCTYPE html lang='en'>
 
 <html>
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset='utf-8' />
   <title>dkfolio</title>
-  <meta name="description" content="Danielle Kormylo Photography" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-  <link rel="stylesheet" href="styles.css" />
-  <script src="components/nav-element.js" type="text/javascript" defer></script>
-  <script src="components/footer-element.js" type="text/javascript" defer></script>
-  <script src="components/image-overlay.js"></script>
-  <style>
-    .aboutgrid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 12em auto 6em 6em 12em auto;
-    }
-
-    .aboutgrid h1 {
-      text-transform: uppercase;
-      font-weight: 100;
-      font-size: var(--h1-height);
-    }
-
-    .aboutgrid p {
-      text-transform: uppercase;
-      text-align: start;
-      padding-top: 1em;
-    }
-
-    .aboutgrid #ellietitle {
-      grid-column: 1 / 3;
-      grid-row: 1 / 2;
-      justify-self: end;
-      align-self: center;
-    }
-
-    .aboutgrid #ellieimage {
-      grid-column: 3 / 5;
-      grid-row: 1 / 4;
-      padding: 6em 2em 0em;
-      justify-self: end;
-    }
-
-    .aboutgrid #aboutellie {
-      grid-column: 1 / 3;
-      grid-row: 2 / 4;
-      display: flex;
-      flex-direction: column;
-      padding-left: 6em;
-    }
-
-    .aboutgrid #aboutellie p {
-      justify-self: end;
-    }
-
-    .aboutgrid .greybar {
-      grid-area: 3 / 1 / 5 / -1;
-      height: 100%;
-      z-index: -1;
-    }
-
-    .aboutgrid #bryceimage {
-      grid-area: 4 / 1 / 7 / 3;
-      padding: 3em;
-    }
-
-    .aboutgrid #brycetitle {
-      grid-area: 5 / 3 / 6 / 5;
-      align-self: end;
-    }
-
-    .aboutgrid #aboutbryce {
-      grid-area: 6 / 3 / 7 / 5;
-      display: flex;
-      flex-direction: column;
-      margin: 2em 6em 0 0;
-    }
-  </style>
-</head>
+  <meta name='description' content='Danielle Kormylo Photography' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Comfortaa'>
+  <link rel='stylesheet' href='styles/styles.css' />
+  <link rel='stylesheet' href='styles/about-layout.css' />
+  <script src='components/nav-element.js' type='text/javascript' defer></script>
+  <script src='components/footer-element.js' type='text/javascript' defer></script>
+  <script defer src='components/image-overlay.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
 
 <body>
   <nav-component></nav-component>
-  <main class="aboutgrid">
-    <div id="overlay" onclick="hideImageOverlay()"></div>
-    <h1 id="ellietitle">hi, i'm danielle</h1>
-    <img id="ellieimage" src="assets/ellie.png" onclick="showImageOverlay('assets/ellie.png')">
-    <div id="aboutellie">
+  <main class='aboutgrid'>
+    <h1 id='ellietitle'>hi, i'm danielle</h1>
+    <img id='ellieimage' src='assets/ellie.png'>
+    <div id='aboutellie'>
       <p>My name is Danielle Kormylo and I am the proud owner of our family business Kormylo Photography! In my early
         days
         as a photographer, I focused mainly on portrait photography, however over time I found myself increasingly drawn
@@ -117,10 +49,10 @@
         aim
         to convey the magnificence of our planet and inspire others to appreciate its wonders.</p>
     </div>
-    <div class="greybar"></div>
-    <img id="bryceimage" src="assets/bryce.png" onclick="showImageOverlay('assets/bryce.png')">
-    <h1 id="brycetitle">hi, i'm bryce</h1>
-    <div id="aboutbryce">
+    <div class='greybar'></div>
+    <img id='bryceimage' src='assets/bryce.png'>
+    <h1 id='brycetitle'>hi, i'm bryce</h1>
+    <div id='aboutbryce'>
       <p>My name is Bryce Kormylo, I am a website builder and enjoy my time working as a second shooter for my wife,
         Danielle. My approach to photography is to create distinctive images that capture the viewer's attention. I aim
         to produce a diverse set of captivating photos at the end of each shoot, with each image offering something

@@ -1,0 +1,57 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div > img {
+  max-width: 100%;
+  height: fit-content;
+}
+
+.title {
+  font-size: 128;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.greybar {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+#film {
+  grid-column: 2 / 3;
+  justify-self: flex-end;
+  padding-right: 2em;
+}
+
+#digital {
+  grid-column: 1 / 2;
+  grid-row: span 2;
+  justify-self: flex-start;
+  padding-left: 2em;
+}
+
+#devils-slide {
+  grid-row: 1;
+  grid-column: 2 / 3;
+  margin-right: 2em;
+  margin-top: 34%;
+}
+
+#seal-pile {
+  grid-row: 1;
+  grid-column: 1 / 2;
+  margin-left: 2em;
+}
