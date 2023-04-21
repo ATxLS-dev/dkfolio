@@ -40,11 +40,14 @@ function createImageOverlay(imgSrc) {
                 top: 0;
             }
             .overlay img {
+                margin: 5%em;
                 height: auto;
-                max-height: 100%;
-                max-width: 100%;
+                width: auto;
+                max-height: 90%;
+                max-width: 90%;
                 grid-column: 2 / 3;
                 grid-row: 1 / 2;
+                border: 1em #ffffff solid;
             }
         </style>
     `
