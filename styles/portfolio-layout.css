@@ -1,12 +1,10 @@
 main {
   display: grid;
-  grid-template-columns: [left_image-start] 1fr [left_image-end right_image-start] 1fr [right_image-end];
-  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
   justify-content: center;
   align-items: center;
-  min-width: 100%;
-  margin-top: 10em;
+  margin: 6em 1em 0em 1em;
 }
 
 div {
@@ -45,29 +43,4 @@ div > img {
   grid-row: span 2;
   justify-self: flex-start;
   padding-left: 2em;
-}
-
-#devils-slide {
-  grid-row: 1;
-  grid-column: right_image;
-  margin-right: 2em;
-  margin-top: 34%;
-}
-
-#seal-pile {
-  grid-row: 1;
-  grid-column: left_image;
-  margin-left: 2em;
-}
-#mussel-rock-para {
-  grid-row: 3 / 4;
-  grid-column: left_image;
-  margin-left: 2em;
-  margin-bottom: 55%;
-}
-
-#rocks {
-  grid-row: 3 / 4;
-  grid-column: right_image;
-  margin-right: 2em;
 }
