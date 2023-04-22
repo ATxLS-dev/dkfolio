@@ -14,11 +14,12 @@
     <script src='https://kit.fontawesome.com/9057af6818.js' crossorigin='anonymous'></script>
     <script src='components/nav-element.js' type='text/javascript' defer></script>
     <script src='components/footer-element.js' type='text/javascript' defer></script>
+    <script src='components/eyes.js'></script>
 </head>
 
 <body>
     <nav-component></nav-component>
-    <main class='contact'>
+    <main>
         <div id='contactinfo'>
             <p><i class='fa-brands fa-instagram fa-2xl'></i> @kormylophotography</p>
             <p>danielle@kormylophotography.com</p>
@@ -31,10 +32,13 @@
             <input type='text' id='email' placeholder='email'>
             <input type='text' id='subject' placeholder='subject'>
             <textarea name='message' id='message' cols='40' rows='3' placeholder='tell me more!'></textarea>
-            <div id="submit-button"><span>Submit</span></div>
+            <div id="submit-button">
+                <span>Submit</span>
+            </div>
         </div>
     </main>
     <footer-component></footer-component>
+    <script>eyeBuilder()</script>
 </body>
 
 </html>
